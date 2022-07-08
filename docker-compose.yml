@@ -1,0 +1,13 @@
+version: '3'
+services:
+  server:
+    container_name: server
+    build: .
+    volumes:
+      - type: bind
+        source: ./server
+        target: /app/server
+    ports:
+      - 8000:8000
+    environment:
+      - PYTHONPATH=/app/server
